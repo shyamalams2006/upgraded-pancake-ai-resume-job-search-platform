@@ -1,31 +1,10 @@
-const placeholderResult = {
-  score: 78,
-  skillsFound: ['JavaScript', 'React', 'HTML/CSS'],
-  skillsMissing: ['Node.js', 'SQL'],
-}
-
-function Results() {
+function Resume() {
   return (
     <div>
-      <h2>Analysis Results</h2>
-
-      <p>Resume Score: {placeholderResult.score}/100</p>
-
-      <h3>Skills Found</h3>
-      <ul>
-        {placeholderResult.skillsFound.map((skill) => (
-          <li key={skill}>{skill}</li>
-        ))}
-      </ul>
-
-      <h3>Skills to Improve</h3>
-      <ul>
-        {placeholderResult.skillsMissing.map((skill) => (
-          <li key={skill}>{skill}</li>
-        ))}
-      </ul>
+      <h1>📄 My Resume</h1>
+      <p>Upload and manage your resume here.</p>
     </div>
-  )
+  );
 }
 
-export default Results
+export default Resume;
