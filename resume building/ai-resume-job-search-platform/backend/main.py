@@ -104,3 +104,42 @@ def get_skill_gap(resume_id: str):
         (resume_id,),
     )
     return {"count": len(analyses), "data": analyses}
+
+
+@app.get("/jobs/search")
+def search_jobs(
+    keyword: str | None = None,
+    location: str | None = None,
+    skill: str | None = None,
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+):
+    query = """
+        SELECT *
+        FROM jobs
+        WHERE (%s IS NULL OR job_title LIKE %s OR company LIKE %s)
+          AND (%s IS NULL OR location LIKE %s)
+          AND (%s IS NULL OR required_skills LIKE %s)
+        ORDER BY job_id
+        LIMIT %s OFFSET %s
+    """
+
+    keyword_pattern = f"%{keyword}%" if keyword else None
+    location_pattern = f"%{location}%" if location else None
+    skill_pattern = f"%{skill}%" if skill else None
+
+    params = (
+        keyword, keyword_pattern, keyword_pattern,
+        location, location_pattern,
+        skill, skill_pattern,
+        limit, offset,
+    )
+
+    jobs = fetch_all(query, params)
+
+    return {
+        "count": len(jobs),
+        "limit": limit,
+        "offset": offset,
+        "data": jobs,
+    }
