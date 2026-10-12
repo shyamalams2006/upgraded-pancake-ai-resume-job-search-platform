@@ -12,6 +12,8 @@ import SavedJobs from './pages/SavedJobs';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Logout from './pages/Logout';
+import ResumeBuilder from './pages/ResumeBuilder';
+import JobApplications from './pages/JobApplications';
 
 import Sidebar from './components/Sidebar';
 
@@ -54,6 +56,12 @@ function App() {
                     element={<Resume />}
                   />
 
+                  {/* Resume Builder */}
+                  <Route
+                    path="/resume-builder"
+                    element={<ResumeBuilder />}
+                  />
+
                   {/* Resume Analysis */}
                   <Route
                     path="/resume-analysis"
@@ -82,6 +90,12 @@ function App() {
                   <Route
                     path="/saved-jobs"
                     element={<SavedJobs />}
+                  />
+
+                  {/* Job Applications */}
+                  <Route
+                    path="/job-applications"
+                    element={<JobApplications />}
                   />
 
                   {/* Profile */}

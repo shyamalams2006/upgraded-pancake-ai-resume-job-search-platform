@@ -11,12 +11,14 @@ function Sidebar() {
         <Link to="/dashboard">🏠 Dashboard</Link>
 
         <Link to="/resume">📄 My Resume</Link>
+        <Link to="/resume-builder">✨ Resume Builder</Link>
         <Link to="/resume-analysis">🤖 Resume Analysis</Link>
         <Link to="/skill-gap">📊 Skill Gap</Link>
 
         <Link to="/jobs">💼 Job Recommendations</Link>
         <Link to="/job-analysis">🔍 Job Analysis</Link>
         <Link to="/saved-jobs">⭐ Saved Jobs</Link>
+        <Link to="/job-applications">🗂️ Applications</Link>
 
         <Link to="/profile">👤 Profile</Link>
         <Link to="/settings">⚙️ Settings</Link>

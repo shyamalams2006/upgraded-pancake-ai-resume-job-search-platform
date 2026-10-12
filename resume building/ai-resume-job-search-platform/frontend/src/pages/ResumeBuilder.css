@@ -1,0 +1,802 @@
+.rb-page {
+  --rb-ink: #1b2340;
+  --rb-muted: #7b8299;
+  --rb-border: #e7e9f2;
+  --rb-violet: #6257e8;
+  color: var(--rb-ink);
+  margin: -30px;
+  min-height: 100vh;
+  padding: 34px clamp(18px, 3vw, 42px) 50px;
+  background: #f6f7fb;
+}
+
+.rb-page,
+.rb-page * {
+  box-sizing: border-box;
+}
+
+.rb-page button,
+.rb-page input,
+.rb-page textarea,
+.rb-page select {
+  font: inherit;
+}
+
+.rb-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 22px;
+  max-width: 1600px;
+  margin: 0 auto 26px;
+}
+
+.rb-eyebrow,
+.rb-step-label {
+  color: #878ba3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.rb-eyebrow span {
+  margin: 0 5px;
+  color: #a9a3f7;
+}
+
+.rb-page-header h1 {
+  margin: 8px 0 5px;
+  color: #1c2341;
+  font-size: clamp(27px, 3vw, 36px);
+  letter-spacing: -.045em;
+}
+
+.rb-page-header p,
+.rb-editor-intro p {
+  margin: 0;
+  color: #80869b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.rb-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.rb-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.rb-button:hover,
+.rb-add-button:hover {
+  transform: translateY(-1px);
+}
+
+.rb-button-light {
+  color: #404761;
+  background: #fff;
+  border-color: #e5e7f0;
+}
+
+.rb-button-light:hover {
+  background: #f8f8fc;
+  box-shadow: 0 5px 14px #27304b12;
+}
+
+.rb-button-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #7164f1, #5146d5);
+  box-shadow: 0 6px 15px #6257e833;
+}
+
+.rb-button-primary:hover {
+  box-shadow: 0 9px 19px #6257e844;
+}
+
+.rb-notice {
+  max-width: 1600px;
+  margin: 0 auto 18px;
+  border: 1px solid #dddafa;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: #f0efff;
+  color: #5148bb;
+  font-size: 12px;
+}
+
+.rb-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
+  align-items: start;
+  gap: 22px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.rb-preview-panel,
+.rb-editor-panel {
+  min-width: 0;
+  border: 1px solid #ebedf4;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 10px 30px #252b4710;
+}
+
+.rb-preview-panel {
+  position: sticky;
+  top: 18px;
+  overflow: hidden;
+}
+
+.rb-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 54px;
+  border-bottom: 1px solid #eff0f5;
+  padding: 0 19px;
+  color: #888da1;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.rb-panel-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #525a72;
+}
+
+.rb-panel-heading > span {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.rb-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #43c89b;
+  box-shadow: 0 0 0 3px #43c89b20;
+}
+
+.rb-paper-wrap {
+  overflow: auto;
+  max-height: calc(100vh - 155px);
+  padding: clamp(15px, 2vw, 25px);
+  background: #eef0f6;
+}
+
+.rb-paper {
+  --resume-accent: #6257e8;
+  width: 100%;
+  max-width: 794px;
+  min-height: 1123px;
+  margin: 0 auto;
+  padding: 49px 53px;
+  overflow-wrap: anywhere;
+  background: #fff;
+  color: #30364b;
+  box-shadow: 0 5px 22px #1c244522;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.rb-resume-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 2px solid var(--resume-accent);
+  padding-bottom: 17px;
+}
+
+.rb-resume-header h1 {
+  margin: 0;
+  color: #212744;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.15;
+}
+
+.rb-resume-title {
+  margin: 5px 0 0;
+  color: var(--resume-accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rb-resume-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 13px;
+  color: #697087;
+  font-size: 9px;
+}
+
+.rb-resume-section {
+  margin-top: 20px;
+}
+
+.rb-resume-section h2 {
+  margin: 0 0 9px;
+  border-bottom: 1px solid #e4e6ee;
+  padding-bottom: 5px;
+  color: var(--resume-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.rb-resume-section > p,
+.rb-resume-entry p {
+  margin: 5px 0 0;
+  white-space: pre-line;
+  color: #4f566c;
+}
+
+.rb-resume-placeholder {
+  color: #a2a6b5 !important;
+  font-style: italic;
+}
+
+.rb-resume-entry {
+  margin: 0 0 12px;
+}
+
+.rb-resume-entry:last-child {
+  margin-bottom: 0;
+}
+
+.rb-entry-heading,
+.rb-entry-subheading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rb-entry-heading strong {
+  color: #30364b;
+  font-size: 11px;
+}
+
+.rb-entry-heading > span {
+  flex: 0 0 auto;
+  color: #777e91;
+  font-size: 9px;
+}
+
+.rb-entry-subheading {
+  margin-top: 2px;
+  color: var(--resume-accent);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.rb-entry-subheading > span + span {
+  color: #777e91;
+  font-weight: 400;
+}
+
+.rb-resume-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.rb-resume-skills > span {
+  border-radius: 5px;
+  padding: 4px 8px;
+  background: color-mix(in srgb, var(--resume-accent) 9%, white);
+  color: #454c63;
+  font-size: 9px;
+}
+
+.rb-resume-skills strong {
+  color: var(--resume-accent);
+}
+
+.rb-resume-list {
+  margin: 0;
+  padding-left: 16px;
+  color: #4f566c;
+}
+
+.rb-resume-list li + li {
+  margin-top: 4px;
+}
+
+.rb-editor-panel {
+  padding: 21px;
+}
+
+.rb-editor-intro {
+  margin-bottom: 21px;
+}
+
+.rb-editor-intro h2 {
+  margin: 6px 0 5px;
+  color: #222842;
+  font-size: 20px;
+  letter-spacing: -.03em;
+}
+
+.rb-editor-intro p {
+  font-size: 12px;
+}
+
+.rb-form-section {
+  border-top: 1px solid #eef0f5;
+  padding: 18px 0;
+}
+
+.rb-form-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 14px;
+  color: #30364d;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.rb-section-number {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border-radius: 8px;
+  background: #f0efff;
+  color: #685de5;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.rb-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rb-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+  color: #636a80;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.rb-field-wide {
+  grid-column: 1 / -1;
+}
+
+.rb-field input,
+.rb-field textarea,
+.rb-field select {
+  width: 100%;
+  min-height: 39px;
+  border: 1px solid #e4e6ee;
+  border-radius: 8px;
+  outline: none;
+  padding: 9px 10px;
+  background: #fff;
+  color: #30364b;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.rb-field textarea {
+  min-height: 76px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.rb-field input::placeholder,
+.rb-field textarea::placeholder {
+  color: #b0b4c1;
+}
+
+.rb-field input:focus,
+.rb-field textarea:focus,
+.rb-field select:focus {
+  border-color: #938bf1;
+  box-shadow: 0 0 0 3px #6257e817;
+}
+
+.rb-record {
+  position: relative;
+  margin-bottom: 12px;
+  border: 1px solid #eceef4;
+  border-radius: 10px;
+  padding: 30px 11px 11px;
+  background: #fcfcfe;
+}
+
+.rb-remove {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  border: 0;
+  padding: 3px 5px;
+  background: transparent;
+  color: #a35668;
+  cursor: pointer;
+  font-size: 10px !important;
+}
+
+.rb-remove:hover {
+  color: #c83454;
+  text-decoration: underline;
+}
+
+.rb-add-button {
+  min-height: 35px;
+  border: 1px dashed #c9c5f4;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #faf9ff;
+  color: #6257d4;
+  cursor: pointer;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  transition: transform .18s ease, background .18s ease;
+}
+
+.rb-add-button:hover {
+  background: #f2f0ff;
+}
+
+.rb-checkbox {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #737a8e;
+  font-size: 10px;
+}
+
+.rb-checkbox input {
+  accent-color: #6257e8;
+}
+
+.rb-design-section > .rb-field {
+  margin-bottom: 13px;
+}
+
+.rb-color-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border: 1px solid #e8eaf1;
+  border-radius: 9px;
+  padding: 10px 12px;
+  color: #474e64;
+  font-size: 11px;
+}
+
+.rb-color-field span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rb-color-field small {
+  color: #8a90a2;
+  font-size: 10px;
+}
+
+.rb-color-field input {
+  width: 37px;
+  height: 31px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.rb-editor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid #eef0f5;
+  padding-top: 16px;
+}
+
+.rb-editor-footer > span {
+  color: #9297a7;
+  font-size: 9px;
+  text-align: right;
+}
+
+.rb-template-classic .rb-resume-header {
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.rb-template-classic .rb-resume-header h1,
+.rb-template-classic .rb-resume-title,
+.rb-template-classic .rb-resume-section h2 {
+  color: #252525;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.rb-template-classic .rb-resume-section h2 {
+  border-color: #8b8b8b;
+  letter-spacing: .04em;
+}
+
+.rb-template-minimal {
+  padding: 60px;
+}
+
+.rb-template-minimal .rb-resume-header {
+  border-bottom: 0;
+}
+
+.rb-template-minimal .rb-resume-section h2 {
+  border-bottom: 0;
+  padding-bottom: 0;
+  font-size: 10px;
+}
+
+.rb-template-creative .rb-resume-header {
+  border-bottom: 0;
+  border-left: 5px solid var(--resume-accent);
+  padding: 10px 0 10px 15px;
+}
+
+.rb-template-creative .rb-resume-section h2 {
+  border-bottom: 0;
+  border-left: 3px solid var(--resume-accent);
+  padding-left: 8px;
+}
+
+.rb-template-corporate .rb-resume-header {
+  margin: -49px -53px 0;
+  padding: 42px 53px 19px;
+  background: color-mix(in srgb, var(--resume-accent) 8%, white);
+}
+
+.rb-template-corporate .rb-resume-header h1 {
+  color: #19213c;
+}
+
+.rb-template-ats-friendly {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5px;
+}
+
+.rb-template-ats-friendly .rb-resume-header {
+  border-bottom: 1px solid #424242;
+}
+
+.rb-template-ats-friendly .rb-resume-header h1,
+.rb-template-ats-friendly .rb-resume-title,
+.rb-template-ats-friendly .rb-resume-section h2,
+.rb-template-ats-friendly .rb-entry-subheading,
+.rb-template-ats-friendly .rb-resume-skills strong {
+  color: #222;
+}
+
+.rb-template-ats-friendly .rb-resume-skills {
+  display: block;
+}
+
+.rb-template-ats-friendly .rb-resume-skills > span {
+  display: inline;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.rb-template-ats-friendly .rb-resume-skills > span + span::before {
+  content: ' · ';
+  color: #666;
+}
+
+.rb-preview-mode .rb-page-header {
+  max-width: 1060px;
+}
+
+.rb-preview-mode .rb-workspace {
+  display: block;
+  max-width: 1060px;
+}
+
+.rb-preview-mode .rb-preview-panel {
+  position: static;
+}
+
+.rb-preview-mode .rb-paper-wrap {
+  max-height: none;
+  padding: 32px;
+}
+
+@media (max-width: 1200px) {
+  .rb-workspace {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, .95fr);
+    gap: 15px;
+  }
+
+  .rb-paper {
+    min-height: 900px;
+    padding: 35px;
+  }
+
+  .rb-template-minimal {
+    padding: 42px;
+  }
+
+  .rb-template-corporate .rb-resume-header {
+    margin: -35px -35px 0;
+    padding: 31px 35px 17px;
+  }
+}
+
+@media (max-width: 850px) {
+  .rb-page {
+    margin: -20px;
+    padding: 25px 18px 35px;
+  }
+
+  .rb-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rb-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .rb-preview-panel {
+    position: static;
+  }
+
+  .rb-paper-wrap {
+    max-height: 75vh;
+  }
+
+  .rb-paper {
+    min-height: 1000px;
+    padding: 42px;
+  }
+
+  .rb-template-minimal {
+    padding: 48px;
+  }
+
+  .rb-template-corporate .rb-resume-header {
+    margin: -42px -42px 0;
+    padding: 36px 42px 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .rb-page {
+    margin: -14px;
+    padding: 22px 12px 28px;
+  }
+
+  .rb-header-actions {
+    width: 100%;
+  }
+
+  .rb-header-actions .rb-button {
+    flex: 1;
+    min-width: 0;
+    padding: 0 9px;
+    font-size: 10px !important;
+  }
+
+  .rb-editor-panel {
+    padding: 16px;
+  }
+
+  .rb-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rb-field-wide,
+  .rb-checkbox {
+    grid-column: auto;
+  }
+
+  .rb-paper-wrap {
+    padding: 10px;
+  }
+
+  .rb-paper {
+    min-height: 800px;
+    padding: 25px 21px;
+    font-size: 9px;
+  }
+
+  .rb-template-minimal {
+    padding: 28px 22px;
+  }
+
+  .rb-template-corporate .rb-resume-header {
+    margin: -25px -21px 0;
+    padding: 22px 21px 14px;
+  }
+
+  .rb-resume-header h1 {
+    font-size: 24px;
+  }
+
+  .rb-entry-heading,
+  .rb-entry-subheading {
+    gap: 5px;
+  }
+}
+
+@media print {
+  body:has(.rb-page) {
+    margin: 0;
+    background: #fff;
+  }
+
+  body:has(.rb-page) .sidebar,
+  body:has(.rb-page) .rb-page-header,
+  body:has(.rb-page) .rb-notice,
+  body:has(.rb-page) .rb-editor-panel,
+  body:has(.rb-page) .rb-panel-heading {
+    display: none !important;
+  }
+
+  body:has(.rb-page) .main-content,
+  body:has(.rb-page) .rb-page,
+  body:has(.rb-page) .rb-workspace,
+  body:has(.rb-page) .rb-preview-panel,
+  body:has(.rb-page) .rb-paper-wrap {
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    overflow: visible;
+    background: #fff;
+    box-shadow: none;
+  }
+
+  body:has(.rb-page) .rb-workspace {
+    display: block;
+  }
+
+  body:has(.rb-page) .rb-paper {
+    width: 210mm;
+    max-width: none;
+    min-height: 297mm;
+    margin: 0;
+    padding: 15mm;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
